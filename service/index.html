@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Starter Page - Arsha Bootstrap Template</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="/assets/img/favicon.png" rel="icon">
+  <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="/assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Arsha
+  * Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+<style>
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .card {
+    width: 270px;
+    height: 350px;
+    perspective: 1000px;
+    position: relative;
+  }
+
+  .card-inner {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+  }
+
+
+  .card-front,
+  .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .card-front {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+  }
+
+  .card-front p {
+    padding: 0 30px;
+    text-align: justify;
+  }
+
+  .card-front h1 {
+    padding: 0 30px;
+    font-size: 1.5rem;
+  }
+
+  .card-front img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+  }
+</style>
+
+<body class="starter-page-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="#" class="logo d-flex align-items-center me-auto">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="/assets/img/logo.png" alt=""> -->
+        <h1 class="sitename">CodingCreators</h1>
+      </a>
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="/" class="active">Home</a></li>
+          <li><a href="/about/">About Us</a></li>
+          <li class="dropdown"><a href="#"><span>Services</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <!-- <li><a href="#">Dropdown 1</a></li> -->
+              <li class="dropdown"><a href="#"><span>Classroom Training</span> <i
+                    class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Weekday Classes</a></li>
+                  <li><a href="#">Weekend Classes</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Online Training</a></li>
+              <li><a href="#">Corporate Training</a></li>
+              <li><a href="#">Real-time project</a></li>
+              <li><a href="#">IT Work Support</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Courses Offered</span> <i
+                class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <!-- <li><a href="#">Dropdown 1</a></li> -->
+              <li class="dropdown"><a href="/courses/"><span>Programming & Development
+                  </span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Web Development</a></li>
+                  <li><a href="#">Mobile App Development</a></li>
+                  <li><a href="#">Game Development</a></li>
+                  <li><a href="#">DevOps</a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a href="#"><span>Software Testing & Quality Assurance</span> <i
+                    class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Manual Testing</a></li>
+                  <li><a href="#">Automation Testing</a></li>
+                  <li><a href="#">Performance Testing</a></li>
+                  <li><a href="#">API Testing</a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a href="#"><span>Data Science & Analytics</span> <i
+                    class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Data Science with Python or R
+                    </a></li>
+                  <li><a href="#">Machine Learning & AI
+                    </a></li>
+                  <li><a href="#">Deep Learning</a></li>
+                  <li><a href="#">Big Data Tools</a></li>
+                  <li><a href="#">Data Visualization</a></li>
+                  <li><a href="#">SQL & NoSQL Databases</a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a href="#"><span>Cloud Computing</span> <i
+                    class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Amazon Web Services</a></li>
+                  <li><a href="#">Microsoft Azure
+                    </a></li>
+                  <li><a href="#">Google Cloud Platform</a></li>
+                  <li><a href="#">Cloud Security and Architecture</a></li>
+                  <li><a href="#">VMware and OpenStack
+                    </a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a href="#"><span>Cybersecurity
+                  </span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Ethical Hacking and Penetration Testing
+                    </a></li>
+                  <li><a href="#">Network Security
+                    </a></li>
+                  <li><a href="#">Security Information and Event Management (SIEM)
+                    </a></li>
+                  <li><a href="#">Cryptography</a></li>
+                  <li><a href="#">Risk Management and Compliance
+                    </a></li>
+                  <li><a href="#">Certified Ethical Hacker (CEH), CISSP, CISM
+                    </a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a href="#"><span>Networking & System Administration</span> <i
+                    class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Cisco Certified Network Associate (CCNA)
+                    </a></li>
+                  <li><a href="#">Linux Administration (RedHat, Ubuntu)
+                    </a></li>
+                  <li><a href="#">Windows Server Administration
+                    </a></li>
+                  <li><a href="#">Network Security and Firewalls
+                    </a></li>
+                  <li><a href="#">Virtualization (VMware, Hyper-V)
+                    </a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a href="#"><span>Artificial Intelligence & Machine Learning</span> <i
+                    class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">AI Foundations</a></li>
+                  <li><a href="#">Natural Language Processing (NLP)
+                    </a></li>
+                  <li><a href="#">Computer Vision
+                    </a></li>
+                  <li><a href="#">Reinforcement Learning
+                    </a></li>
+                  <li><a href="#">AI for Robotics
+                    </a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a href="#"><span>Database Management</span> <i
+                    class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">SQL</a></li>
+                  <li><a href="#">NoSQL</a></li>
+                  <li><a href="#">Data Warehousing</a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a href="#"><span>Project Management & Agile</span> <i
+                    class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Agile & Scrum Framework
+                    </a></li>
+                  <li><a href="#">Project Management Professional (PMP)
+                    </a></li>
+                  <li><a href="#">SAFe Agile Certification</a></li>
+                  <li><a href="#">ITIL Foundation
+                    </a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a href="#"><span>Other Emerging Technologies</span> <i
+                    class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Blockchain Development
+                    </a></li>
+                  <li><a href="#">Internet of Things
+                    </a></li>
+                  <li><a href="#">Quantum Computing</a></li>
+                  <li><a href="#">Robotics Process Automation</a></li>
+                  <li><a href="#">Virtual Reality (VR) and Augmented Reality (AR)</a></li>
+                </ul>
+              </li>
+              <!-- <li><a href="#">Dropdown 2</a></li>
+                  <li><a href="#">Dropdown 3</a></li>
+                  <li><a href="#">Dropdown 4</a></li> -->
+            </ul>
+          </li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="#about">Get Started</a>
+
+    </div>
+  </header>
+
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade">
+      <div class="container">
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li class="current">Starter Page</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+
+    <!-- Service Details Section -->
+    <section id="service-details" class="service-details section">
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <h4>Serices List</h4>
+            <div class="services-list">
+              <a href="#" class="active" onclick="showImage('classtraining')"><i
+                  class="bi bi-arrow-right-circle"></i><span>Classroom Training</span></a>
+              <a href="#" onclick="showImage('onlinetraining')"><i class="bi bi-arrow-right-circle"></i><span>
+                  Online Training</span></a>
+              <a href="#" onclick="showImage('corporatetraining')"><i class="bi bi-arrow-right-circle"></i><span>Data
+                  Corporate Training</span></a>
+              <a href="#" onclick="showImage('realtimeproject')"><i class="bi bi-arrow-right-circle"></i><span>Cloud
+                  Real-time project</span></a>
+              <a href="#" onclick="showImage('itsupport')"><i class="bi bi-arrow-right-circle"></i><span>Cloud
+                  IT Work Support</span></a>
+            </div>
+
+            <h4>Enim qui eos rerum in delectus</h4>
+            <p>Nam voluptatem quasi numquam quas fugiat ex temporibus quo est. Quia aut quam quod facere ut non
+              occaecati ut aut. Nesciunt mollitia illum tempore corrupti sed eum reiciendis. Maxime modi rerum.</p>
+          </div>
+
+          <div class="image-display col-lg-8" data-aos="fade-up" data-aos-delay="200">
+            <div id="classtraining" style="display: block;">
+              <section id="features-cards" class="features-cards section">
+
+                <div class="card-container">
+                  <!-- <div class="card" data-category="cms">
+                    <div class="card-inner">
+                      <div class="card-front">
+                        <img src="/assets/img/service/wordpress.png" alt="Card Image">
+                        <p>We provide engaging and quality CMS Website
+                          Development Services
+                          tailored to your business needs. We also assist in seamless platform migration to any CMS</p>
+                      </div>
+                      <div class="card-back">
+                        <div>
+                          <ul>
+                            <li>Custom WordPress Design</li>
+                            <li>Theme Development</li>
+                            <li>WooCommerce Integration</li>
+                            <li>Plugin Development</li>
+                            <li>Website Optimization</li>
+                            <li>WordPress Migration Services</li>
+                            <li>Security Enhancements</li>
+                          </ul>
+                        </div>
+                        <a onclick="openPopup()" class="btn btn-primary">Reach Out</a>
+                      </div>
+                    </div>
+                  </div> -->
+
+                  <div class="card" data-category="cms">
+                    <div class="card-inner">
+                      <div class="card-front">
+                        <h1>Weekday Classes</h1>
+                        <p>We provide engaging and quality CMS Website
+                          Development Services
+                          tailored to your business needs. We also assist in seamless platform migration to any CMS</p>
+                        <div>
+                          <a onclick="openPopup()" class="btn btn-primary">Full Syllabus</a>
+                          <a onclick="openPopup()" class="btn btn-primary">Reach Out</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card" data-category="cms">
+                    <div class="card-inner">
+                      <div class="card-front">
+                        <h1>Weekend Classes</h1>
+                        <p>We provide engaging and quality CMS Website
+                          Development Services
+                          tailored to your business needs. We also assist in seamless platform migration to any CMS</p>
+                        <div>
+                          <a onclick="openPopup()" class="btn btn-primary">Full Syllabus</a>
+                          <a onclick="openPopup()" class="btn btn-primary">Reach Out</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div id="onlinetraining" style="display: none;">
+              <section id="features-cards" class="features-cards section">
+
+                <div class="card-container">
+                  <div class="card" data-category="cms">
+                    <div class="card-inner">
+                      <div class="card-front">
+                        <h1>Online Training</h1>
+                        <p>We provide engaging and quality CMS Website
+                          Development Services
+                          tailored to your business needs. We also assist in seamless platform migration to any CMS</p>
+                        <div>
+                          <a onclick="openPopup()" class="btn btn-primary">Full Syllabus</a>
+                          <a onclick="openPopup()" class="btn btn-primary">Reach Out</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+            </div>
+            <div id="corporatetraining" style="display: none;">
+              <section id="features-cards" class="features-cards section">
+
+                <div class="card-container">
+                  <div class="card" data-category="cms">
+                    <div class="card-inner">
+                      <div class="card-front">
+                        <h1>Corporate Training</h1>
+                        <p>We provide engaging and quality CMS Website
+                          Development Services
+                          tailored to your business needs. We also assist in seamless platform migration to any CMS</p>
+                        <div>
+                          <a onclick="openPopup()" class="btn btn-primary">Full Syllabus</a>
+                          <a onclick="openPopup()" class="btn btn-primary">Reach Out</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div id="cloudcomputing" style="display: none;">
+              <section id="features-cards" class="features-cards section">
+
+                <div class="card-container">
+                  <div class="card" data-category="cms">
+                    <div class="card-inner">
+                      <div class="card-front">
+                        <h1>Amazon Web Services</h1>
+                        <p>We provide engaging and quality CMS Website
+                          Development Services
+                          tailored to your business needs. We also assist in seamless platform migration to any CMS</p>
+                        <div>
+                          <a onclick="openPopup()" class="btn btn-primary">Full Syllabus</a>
+                          <a onclick="openPopup()" class="btn btn-primary">Reach Out</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card" data-category="cms">
+                    <div class="card-inner">
+                      <div class="card-front">
+                        <h1>Microsoft Azure</h1>
+                        <p>We provide engaging and quality CMS Website
+                          Development Services
+                          tailored to your business needs. We also assist in seamless platform migration to any CMS</p>
+                        <div>
+                          <a onclick="openPopup()" class="btn btn-primary">Full Syllabus</a>
+                          <a onclick="openPopup()" class="btn btn-primary">Reach Out</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card" data-category="cms">
+                    <div class="card-inner">
+                      <div class="card-front">
+                        <h1>Google Cloud Platform</h1>
+                        <p>We provide engaging and quality CMS Website
+                          Development Services
+                          tailored to your business needs. We also assist in seamless platform migration to any CMS</p>
+                        <div>
+                          <a onclick="openPopup()" class="btn btn-primary">Full Syllabus</a>
+                          <a onclick="openPopup()" class="btn btn-primary">Reach Out</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card" data-category="cms">
+                    <div class="card-inner">
+                      <div class="card-front">
+                        <h1>Cloud Security and Architecture</h1>
+                        <p>We provide engaging and quality CMS Website
+                          Development Services
+                          tailored to your business needs. We also assist in seamless platform migration to any CMS</p>
+                        <div>
+                          <a onclick="openPopup()" class="btn btn-primary">Full Syllabus</a>
+                          <a onclick="openPopup()" class="btn btn-primary">Reach Out</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card" data-category="cms">
+                    <div class="card-inner">
+                      <div class="card-front">
+                        <h1>VMware and OpenStacke</h1>
+                        <p>We provide engaging and quality CMS Website
+                          Development Services
+                          tailored to your business needs. We also assist in seamless platform migration to any CMS</p>
+                        <div>
+                          <a onclick="openPopup()" class="btn btn-primary">Full Syllabus</a>
+                          <a onclick="openPopup()" class="btn btn-primary">Reach Out</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div id="realtimeproject" style="display: none;">
+              <section id="features-cards" class="features-cards section">
+
+                <div class="card-container">
+                  <div class="card" data-category="cms">
+                    <div class="card-inner">
+                      <div class="card-front">
+                        <h1>Real-time project</h1>
+                        <p>We provide engaging and quality CMS Website
+                          Development Services
+                          tailored to your business needs. We also assist in seamless platform migration to any CMS</p>
+                        <div>
+                          <a onclick="openPopup()" class="btn btn-primary">Full Syllabus</a>
+                          <a onclick="openPopup()" class="btn btn-primary">Reach Out</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+            </div>
+            <div id="itsupport" style="display: none;">
+              <section id="features-cards" class="features-cards section">
+
+                <div class="card-container">
+                  <div class="card" data-category="cms">
+                    <div class="card-inner">
+                      <div class="card-front">
+                        <h1>IT Work Support</h1>
+                        <p>We provide engaging and quality CMS Website
+                          Development Services
+                          tailored to your business needs. We also assist in seamless platform migration to any CMS</p>
+                        <div>
+                          <a onclick="openPopup()" class="btn btn-primary">Full Syllabus</a>
+                          <a onclick="openPopup()" class="btn btn-primary">Reach Out</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      </div>
+
+      </div>
+
+    </section><!-- /Service Details Section -->
+
+  </main>
+
+  <div id="footer"></div>
+  <!-- Scroll Top -->
+
+  <script>
+    // Load navbar.html into the div with id="navbar"
+    fetch('/footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer').innerHTML = data;
+      });
+  </script>
+
+
+  <script>
+
+    // Function to show specific content
+    function showImage(contentId) {
+      const allContent = document.querySelectorAll('.image-display > div');
+      allContent.forEach(content => {
+        content.style.display = content.id === contentId ? 'block' : 'none';
+      });
+
+      const links = document.querySelectorAll('.services-list a');
+      links.forEach(link => link.classList.remove('active'));
+      document.querySelector(`[onclick="showImage('${contentId}')"]`).classList.add('active');
+    }
+
+    function filterCards(category, parentId) {
+      const cards = document.querySelectorAll(`#${parentId} .card`);
+      cards.forEach(card => {
+        const categories = card.dataset.category.split(' '); // Split categories by space
+        if (category === 'all' || categories.includes(category)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      // Update active state for buttons
+      const buttons = document.querySelectorAll(`#${parentId} .tabs button`);
+      buttons.forEach(button => button.classList.remove('active'));
+      document.querySelector(`[onclick="filterCards('${category}', '${parentId}')"]`).classList.add('active');
+    }
+
+  </script>
+
+
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/vendor/php-email-form/validate.js"></script>
+  <script src="/assets/vendor/aos/aos.js"></script>
+  <script src="/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="/assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="/assets/js/main.js"></script>
+
+</body>
+
+</html>
