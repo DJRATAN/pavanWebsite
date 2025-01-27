@@ -1,0 +1,6 @@
+Amazon Web Services
+JAVA Full stack 
+python full stack
+manul testing
+automlation testing
+performace testing
