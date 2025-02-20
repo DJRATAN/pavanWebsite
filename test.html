@@ -2,124 +2,251 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
 
 <body>
-    <div class="col-lg-7">
-        <div class="contact-form" data-aos="fade-up" data-aos-delay="300">
-            <form action="#" method="post" id="contact-form" class="php-email-form" data-aos="fade-up"
-                data-aos-delay="200" onsubmit="return validateForm()">
-                <div class="row gy-4">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">TechnoML</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown">
+              Services
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="javascript:void(0);" onclick="showImage('classtraining')">Classroom Training</a></li>
+              <li><a class="dropdown-item" href="javascript:void(0);" onclick="showImage('onlinetraining')">Online Training</a></li>
+              <li><a class="dropdown-item" href="javascript:void(0);" onclick="showImage('itcorporatetraining')">Corporate Training</a></li>
+              <li><a class="dropdown-item" href="javascript:void(0);" onclick="showImage('realtimeproject')">IT and Non-IT Real-time Projects</a></li>
+              <li><a class="dropdown-item" href="javascript:void(0);" onclick="showImage('itsupport')">IT and NON-IT Work Support</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-                    <div class="col-md-6">
-                        <label for="firstname-field" class="pb-2">First Name</label>
-                        <input type="text" name="firstname" id="firstname-field" class="form-control" required>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="lastname-field" class="pb-2">Last Name</label>
-                        <input type="text" name="lastname" id="lastname-field" class="form-control" required>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="mobilenumber-field" class="pb-2">Mobile Number</label>
-                        <input type="number" name="mobilenumber" id="mobilenumber-field" class="form-control" required>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="email-field" class="pb-2">Your Email</label>
-                        <input type="email" class="form-control" name="email" id="email-field" required>
-                    </div>
+  <div class="image-display col-lg-8" data-aos="fade-up" data-aos-delay="200">
+    <div id="classtraining" style="display: block;">
+      <section id="features-cards" class="features-cards section">
 
-                    <div class="col-md-6">
-                        <label for="domain" class="pb-2">Preferred Domain</label>
-                        <select name="domain" id="domain" class="form-control" required>
-                            <option value="">----Select----</option>
-                            <option value="Web Development">Web Development</option>
-                            <option value="Mobile App Development">Mobile App Development</option>
-                            <option value="Game Development">Game Development</option>
-                            <option value="Angular JS">Angular JS</option>
-                            <option value="JAVA Realtime">JAVA Realtime</option>
-                            <option value="React JS">React JS</option>
-                            <option value="Spring Boot">Spring Boot</option>
-                            <option value="DevOps">DevOps</option>
-                            <option value="Python Full Stack">Python Full Stack</option>
-                            <option value="Java Full Stack">Java Full Stack</option>
-                            <option value="Core Python">Core Python</option>
-                            <option value="Core Java">Core Java</option>
-                            <option value="Advance Python">Advance Python</option>
-                            <option value="Advance Java">Advance Java</option>
-                            <option value="Manual Testing">Manual Testing</option>
-                            <option value="Automation Testing">Automation Testing</option>
-                            <option value="Performance Testing">Performance Testing</option>
-                            <option value="API Testing">API Testing</option>
-                            <option value="Data Science with Python or R">Data Science with Python or R</option>
-                            <option value="Machine Learning & AI">Machine Learning & AI</option>
-                            <option value="Data Analytics">Data Analytics</option>
-                            <option value="Generative AI">Generative AI</option>
-                            <option value="Amazon Web Services">Amazon Web Services</option>
-                            <option value="Microsoft Azure">Microsoft Azure</option>
-                            <option value="SQL">SQL</option>
-                            <option value="NoSQL">NoSQL</option>
-                            <option value="Agile & Scrum Framework">Agile & Scrum Framework</option>
-                        </select>
-                    </div>
-
-                    <div class="col-md-6">
-                        <label for="service" class="pb-2">Services</label>
-                        <select name="service" id="service" class="form-control" required>
-                            <option value="">----Select----</option>
-                            <option value="Classroom Training">Classroom Training</option>
-                            <option value="Online Training">Online Training</option>
-                            <option value="IT Corporate Training">IT Corporate Training</option>
-                            <option value="IT and Non-IT Real-time Projects">IT and Non-IT Real-time Projects</option>
-                            <option value="IT and NON-IT Work support">IT and NON-IT Work support</option>
-                        </select>
-                    </div>
-
-                    <div class="col-md-12 text-center">
-                        <div class="loading">Loading</div>
-                        <div class="error-message"></div>
-                        <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                        <button type="submit">Send Message</button>
-                    </div>
-
+        <div class="card-container">
+          <!-- <div class="card" >
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/assets/img/service/wordpress.png" alt="Card Image">
+                <p>We provide engaging and quality CMS Website
+                  Development Services
+                  tailored to your business needs. We also assist in seamless platform migration to any CMS</p>
+              </div>
+              <div class="card-back">
+                <div>
+                  <ul>
+                    <li>Custom WordPress Design</li>
+                    <li>Theme Development</li>
+                    <li>WooCommerce Integration</li>
+                    <li>Plugin Development</li>
+                    <li>Website Optimization</li>
+                    <li>WordPress Migration Services</li>
+                    <li>Security Enhancements</li>
+                  </ul>
                 </div>
-            </form>
+                <a href="/contact/" class="btn btn-primary">Reach Out</a>
+              </div>
+            </div>
+          </div> -->
+
+          <div class="card">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/assets/img/weekend.jpg" alt="">
+                <p>Comprehensive classroom training to enhance skills, foster learning, and drive professional
+                  growth.</p>
+                <h4>Weekday Classes</h4>
+
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/assets/img/weekend2.jpg" alt="">
+                <p>Interactive classroom training to build skills, boost knowledge, and support career
+                  development.</p>
+                <h4>Weekend Classes</h4>
+
+              </div>
+            </div>
+          </div>
         </div>
     </div>
+    <div id="onlinetraining" style="display: none;">
+      <section id="onlinetraining" class="features-cards section">
+
+        <div class="card-container">
+          <div class="card">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/assets/img/online clasess.jpg" alt="">
+                <p>Flexible and accessible online training to enhance skills and advance professional growth at
+                  your own pace.</p>
+                <h4>Online Training</h4>
+
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/assets/img/online clasess2.jpg" alt="">
+                <p>Comprehensive online training to boost skills, knowledge, and career development at your
+                  convenience.</p>
+                <h4>Online Training</h4>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+    </div>
+    <div id="itcorporatetraining" style="display: none;">
+      <section id="features-cards" class="features-cards section">
+
+        <div class="card-container">
+          <div class="card">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/assets/img/it corparate traing.jpg" alt="">
+                <p>Expert IT corporate training to improve skills, increase efficiency, and support business
+                  success.</p>
+                <h4>IT Corporate Training</h4>
+
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/assets/img/it corparate traing2.jpg" alt="">
+                <p>Offering IT corporate training to enhance skills, boost productivity, and drive business
+                  growth.</p>
+                <h4>IT Corporate Training</h4>
+
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div id="realtimeproject" style="display: none;">
+      <section id="features-cards" class="features-cards section">
+
+        <div class="card-container">
+          <div class="card">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/assets/img/services.jpg" alt="">
+                <p> Delivering IT and Non-IT real-time project support with efficient solutions for your
+                  business needs.
+
+
+                </p>
+                <h4>Final Year Projects</h4>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-inner">
+              <div class="card-front">
+                <h4>Final Year Projects</h4>
+                <ul>
+                  <li>IoT Projects</li>
+                  <li>Software Projects</li>
+                  <li>Embedded Projects</li>
+                  <li>Android Projects</li>
+                  <li>Python Projects</li>
+                  <li>Matlab Projects</li>
+                  <li>Mini Projects</li>
+                </ul>
+                <a href="/contact/" class="btn btn-primary">Reach Out Here</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+    </div>
+    <div id="itsupport" style="display: none;">
+      <section id="features-cards" class="features-cards section">
+
+        <div class="card-container">
+          <div class="card">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/assets/img/it work support.jpg" alt="">
+                <p> Offering professional IT support to ensure seamless technology management and optimization
+                  for your business. </p>
+                <h4> Work support.</h4>
+
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="/assets/img/it work support2.jpg" alt="">
+                <p>Providing reliable Non-IT work support to streamline your business operations, enhance
+                  productivity, and ensure efficiency. </p>
+                <h4> Work support</h4>
+
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
 
 </body>
 <script>
-    function validateForm() {
-        let firstName = document.getElementById("firstname-field").value.trim();
-        let lastName = document.getElementById("lastname-field").value.trim();
-        let mobileNumber = document.getElementById("mobilenumber-field").value.trim();
-        let email = document.getElementById("email-field").value.trim();
+  function showImage(contentId) {
+    // Hide all content
+    const allContent = document.querySelectorAll('.image-display > div');
+    allContent.forEach(content => content.style.display = 'none');
 
-        let nameRegex = /^[A-Za-z]{3,30}$/;
-        let mobileRegex = /^[0-9]{10}$/;
-        let emailRegex = /^[A-Za-z0-9]+@[A-Za-z]+\.[A-Za-z]{2,}$/; // Restricts special characters before @
+    // Show the selected content
+    const selectedContent = document.getElementById(contentId);
+    if (selectedContent) {
+      selectedContent.style.display = 'block';
 
-        if (!nameRegex.test(firstName)) {
-            alert("First name must be between 3 to 30 alphabetic characters only.");
-            return false;
-        }
-        if (!nameRegex.test(lastName)) {
-            alert("Last name must be between 3 to 30 alphabetic characters only.");
-            return false;
-        }
-        if (!mobileRegex.test(mobileNumber)) {
-            alert("Mobile number must be exactly 10 digits.");
-            return false;
-        }
-        if (!emailRegex.test(email)) {
-            alert("Email should not contain special characters like ., %, -, _ before '@'.");
-            return false;
-        }
-        return true;
+      // Smooth scroll to the content
+      selectedContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+      // Update URL hash without reloading
+      history.pushState(null, null, `#${contentId}`);
     }
+
+    // Remove 'active' class from all buttons
+    const links = document.querySelectorAll('.services-list button');
+    links.forEach(link => link.classList.remove('active'));
+
+    // Add 'active' class to clicked button
+    const clickedButton = document.querySelector(`[onclick="showImage('${contentId}')"]`);
+    if (clickedButton) clickedButton.classList.add('active');
+  }
+
+  // Function to check URL hash on page load
+  window.onload = function () {
+    const hash = window.location.hash.substring(1); // Remove the `#`
+    if (hash) {
+      showImage(hash);
+    }
+  };
+
 </script>
 
 </html>

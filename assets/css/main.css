@@ -2015,23 +2015,24 @@ section,
   margin-bottom: 20px;
 }
 
-.service-details .services-list a {
+.service-details .services-list button {
   display: block;
   line-height: 1;
-  padding: 8px 0 8px 15px;
-  border-left: 3px solid color-mix(in srgb, var(--default-color), transparent 70%);
-  margin: 20px 0;
+  padding: 8px 10px 8px 15px; 
+  margin: 10px 0; 
+  border: none;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
   transition: 0.3s;
 }
 
-.service-details .services-list a.active {
+.service-details .services-list button.active {
   color: var(--heading-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
   font-weight: 700;
   border-color: var(--accent-color);
 }
 
-.service-details .services-list a:hover {
+.service-details .services-list button:hover {
   border-color: var(--accent-color);
 }
 
