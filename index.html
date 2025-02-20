@@ -423,85 +423,85 @@
 
           <div class="col-lg-7">
             <div class="contact-form" data-aos="fade-up" data-aos-delay="300">
-              <form action="#" method="post" id="contact-form" class="php-email-form" data-aos="fade-up"
-                data-aos-delay="200">
-                <div class="row gy-4">
-
-                  <div class="col-md-6">
-                    <label for="Fname-field" class="pb-2">First Name</label>
-                    <input type="text" name="firstname" id="firstname-field" class="form-control" required="">
-                  </div>
-                  <div class="col-md-6">
-                    <label for="Lname-field" class="pb-2">Last Name</label>
-                    <input type="text" name="lastname" id="lastname-field" class="form-control" required="">
-                  </div>
-                  <div class="col-md-6">
-                    <label for="mobilenumber-field" class="pb-2">Mobile Number</label>
-                    <input type="number" name="mobilenumber" id="mobilenumber-field" class="form-control" required="">
-                  </div>
-                  <div class="col-md-6">
-                    <label for="email-field" class="pb-2">Your Email</label>
-                    <input type="email" class="form-control" name="email" id="email-field" required="">
-                  </div>
-                  <div class="col-md-6">
-                    <label for="domain" class="pb-2">Preferred Domain</label>
-                    <select name="domain" id="domain" class="form-control" required="">
-                      <option value="">----Select----</option>
-                      <option value="Web Development">Web Development</option>
-                      <option value="Mobile App Development">Mobile App Development</option>
-                      <option value="Game Development">Game Development</option>
-                      <option value="Angular JS">Angular JS</option>
-                      <option value="JAVA Realtime">JAVA Realtime</option>
-                      <option value="React JS">React JS</option>
-                      <option value="Spring Boot">Spring Boot</option>
-                      <option value="DevOps">DevOps</option>
-                      <option value="Python Full Stack">Python Full Stack</option>
-                      <option value="Java Full Stack">Java Full Stack</option>
-                      <option value="Core Python">Core Python</option>
-                      <option value="Core Java">Core Java</option>
-                      <option value="Advance Python">Advance Python</option>
-                      <option value="Advance Java">Advance Java</option>
-                      <option value="Manual Testing">Manual Testing</option>
-                      <option value="Automation Testing">Automation Testing</option>
-                      <option value="Performance Testing">Performance Testing</option>
-                      <option value="API Testing">API Testing</option>
-                      <option value="Data Science with Python or R">Data Science with Python or R</option>
-                      <option value="Machine Learning & AI">Machine Learning & AI</option>
-                      <option value="Data Analytics">Data Analytics</option>
-                      <option value="Generative AI">Generative AI</option>
-                      <option value="Amazon Web Services">Amazon Web Services</option>
-                      <option value="Microsoft Azure">Microsoft Azure</option>
-                      <option value="SQL">SQL</option>
-                      <option value="NoSQL">NoSQL</option>
-                      <option value="Agile & Scrum Framework">Agile & Scrum Framework</option>
-                    </select>
-                  </div>
-
-                  <div class="col-md-6">
-                    <label for="service" class="pb-2">Services</label>
-                    <select name="service" id="service" class="form-control" required="">
-                      <option value="">----Select----</option>
-                      <option value="Classroom Training">Classroom Training</option>
-                      <option value="Online Training">Online Training</option>
-                      <option value="IT Corporate Training">IT Corporate Training</option>
-                      <option value="IT and Non-IT Real-time Projects">IT and Non-IT Real-time Projects</option>
-                      <option value="IT and NON-IT Work support">IT and NON-IT Work support</option>
-                    </select>
-                  </div>
-
-                  <div class="col-md-12 text-center">
-                    <div class="loading">Loading</div>
-                    <div class="error-message"></div>
-                    <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                    <button type="submit">Send Message</button>
-                  </div>
-
-                </div>
-              </form>
+                <form action="#" method="post" id="contact-form" class="php-email-form" data-aos="fade-up"
+                    data-aos-delay="200" onsubmit="return validateForm()">
+                    <div class="row gy-4">
+    
+                        <div class="col-md-6">
+                            <label for="firstname-field" class="pb-2">First Name</label>
+                            <input type="text" name="firstname" id="firstname-field" class="form-control" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="lastname-field" class="pb-2">Last Name</label>
+                            <input type="text" name="lastname" id="lastname-field" class="form-control" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="mobilenumber-field" class="pb-2">Mobile Number</label>
+                            <input type="number" name="mobilenumber" id="mobilenumber-field" class="form-control" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="email-field" class="pb-2">Your Email</label>
+                            <input type="email" class="form-control" name="email" id="email-field" required>
+                        </div>
+    
+                        <div class="col-md-6">
+                            <label for="domain" class="pb-2">Preferred Domain</label>
+                            <select name="domain" id="domain" class="form-control" required>
+                                <option value="">----Select----</option>
+                                <option value="Web Development">Web Development</option>
+                                <option value="Mobile App Development">Mobile App Development</option>
+                                <option value="Game Development">Game Development</option>
+                                <option value="Angular JS">Angular JS</option>
+                                <option value="JAVA Realtime">JAVA Realtime</option>
+                                <option value="React JS">React JS</option>
+                                <option value="Spring Boot">Spring Boot</option>
+                                <option value="DevOps">DevOps</option>
+                                <option value="Python Full Stack">Python Full Stack</option>
+                                <option value="Java Full Stack">Java Full Stack</option>
+                                <option value="Core Python">Core Python</option>
+                                <option value="Core Java">Core Java</option>
+                                <option value="Advance Python">Advance Python</option>
+                                <option value="Advance Java">Advance Java</option>
+                                <option value="Manual Testing">Manual Testing</option>
+                                <option value="Automation Testing">Automation Testing</option>
+                                <option value="Performance Testing">Performance Testing</option>
+                                <option value="API Testing">API Testing</option>
+                                <option value="Data Science with Python or R">Data Science with Python or R</option>
+                                <option value="Machine Learning & AI">Machine Learning & AI</option>
+                                <option value="Data Analytics">Data Analytics</option>
+                                <option value="Generative AI">Generative AI</option>
+                                <option value="Amazon Web Services">Amazon Web Services</option>
+                                <option value="Microsoft Azure">Microsoft Azure</option>
+                                <option value="SQL">SQL</option>
+                                <option value="NoSQL">NoSQL</option>
+                                <option value="Agile & Scrum Framework">Agile & Scrum Framework</option>
+                            </select>
+                        </div>
+    
+                        <div class="col-md-6">
+                            <label for="service" class="pb-2">Services</label>
+                            <select name="service" id="service" class="form-control" required>
+                                <option value="">----Select----</option>
+                                <option value="Classroom Training">Classroom Training</option>
+                                <option value="Online Training">Online Training</option>
+                                <option value="IT Corporate Training">IT Corporate Training</option>
+                                <option value="IT and Non-IT Real-time Projects">IT and Non-IT Real-time Projects</option>
+                                <option value="IT and NON-IT Work support">IT and NON-IT Work support</option>
+                            </select>
+                        </div>
+    
+                        <div class="col-md-12 text-center">
+                            <div class="loading">Loading</div>
+                            <div class="error-message"></div>
+                            <div class="sent-message">Your message has been sent. Thank you!</div>
+    
+                            <button type="submit">Send Message</button>
+                        </div>
+    
+                    </div>
+                </form>
             </div>
-          </div><!-- End Contact Form -->
-
+        </div>
         </div>
 
       </div>
