@@ -14,7 +14,16 @@
 
   document.addEventListener('scroll', toggleScrolled);
   window.addEventListener('load', toggleScrolled);
+  document.addEventListener("DOMContentLoaded", function () {
+    const navbarLinks = document.querySelectorAll(".navbar a[href^='#']"); // Select all links with '#' in navbar
 
+    navbarLinks.forEach(link => {
+      link.addEventListener("click", function (event) {
+        event.preventDefault(); // Prevent default anchor behavior
+        location.reload(); // Reload the page
+      });
+    });
+  });
   /**
    * Mobile nav toggle
    */
