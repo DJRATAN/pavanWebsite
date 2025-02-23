@@ -79,6 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const email = form.email.value;
     const domain = form.domain.value;
     const service = form.service.value;
+    const message = form.message.value;
 
     try {
       // Show loading message
@@ -93,6 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
         email,
         domain,
         service,
+        message,
         timestamp: new Date().toISOString(),
       });
 
