@@ -27,6 +27,8 @@ function validateForm() {
   let email = document.getElementById("email-field").value.trim();
   let domain = document.getElementById("domain").value;
   let service = document.getElementById("service").value;
+  let message = document.getElementById("message-field").value.trim();
+
 
   let nameRegex = /^[A-Za-z]{3,30}$/;
   let mobileRegex = /^[0-9]{10}$/;
@@ -56,7 +58,10 @@ function validateForm() {
     alert("Please select a service.");
     return false;
   }
-
+  if (message.length < 30 || message.length > 400) {
+    alert("Message must be between 30 to 400 characters.");
+    return false;
+  }
   return true; // Form is valid
 }
 
@@ -73,30 +78,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Get form values
-    const firstname = form.firstname.value;
-    const lastname = form.lastname.value;
-    const mobilenumber = form.mobilenumber.value;
-    const email = form.email.value;
-    const domain = form.domain.value;
-    const service = form.service.value;
-    const message = form.message.value;
+    const formData = {
+      firstname: form.firstname.value.trim(),
+      lastname: form.lastname.value.trim(),
+      mobilenumber: form.mobilenumber.value.trim(),
+      email: form.email.value.trim(),
+      domain: form.domain.value,
+      service: form.service.value,
+      message: form.message.value.trim(),
+      timestamp: new Date().toISOString(),
+    };
+    // Include 'project' only if Online Training is selected
+    if (form.service.value === "IT and Non-IT Real-time Projects") {
+      formData.project = form.project.value;
+    }
 
+    if (form.service.value === "Classroom Training") {
+      formData.classroom = form.classroom.value;
+    }
     try {
-      // Show loading message
-      document.querySelector('.loading').style.display = 'block';
+      document.querySelector('.loading').style.display = 'block'; // Show loading message
 
-      // Push data to Firebase Realtime Database
+      // Push data to Firebase
       const dbRef = ref(database, 'contact-page');
-      await push(dbRef, {
-        firstname,
-        lastname,
-        mobilenumber,
-        email,
-        domain,
-        service,
-        message,
-        timestamp: new Date().toISOString(),
-      });
+      await push(dbRef, formData);
 
       // Hide loading message and show success message
       document.querySelector('.loading').style.display = 'none';

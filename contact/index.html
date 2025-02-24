@@ -202,7 +202,9 @@
                 <i class="bi bi-envelope flex-shrink-0"></i>
                 <div>
                   <h3>Email Us</h3>
-                  <p>servicecodingcreators@gmail.com</p>
+                  <a target="_blank" href="mailto:servicecodingcreators@gmail.com" rel="noopener noreferrer">
+                    <p>servicecodingcreators@gmail.com</p>
+                  </a>
                 </div>
               </div><!-- End Info Item -->
 
@@ -271,10 +273,10 @@
                       <option value="Agile & Scrum Framework">Agile & Scrum Framework</option>
                     </select>
                   </div>
-
                   <div class="col-md-6">
                     <label for="service" class="pb-2">Services</label>
-                    <select name="service" id="service" class="form-control" required>
+                    <select name="service" id="service" class="form-control" required
+                      onchange="toggleProjectDropdown()">
                       <option value="">----Select----</option>
                       <option value="Classroom Training">Classroom Training</option>
                       <option value="Online Training">Online Training</option>
@@ -283,8 +285,58 @@
                       <option value="IT and NON-IT Work support">IT and NON-IT Work support</option>
                     </select>
                   </div>
+                  <div class="col-md-6" id="classroom-selection" style="display: none;">
+                    <label for="classroom" class="pb-2">Select Classroom Training</label>
+                    <select name="classroom" id="classroom" class="form-control">
+                      <option value="">----Select Project----</option>
+                      <option value="Weekday Classes">Weekday Classes</option>
+                      <option value="Weekend Classes">Weekend Classes</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6" id="project-selection" style="display: none;">
+                    <label for="project" class="pb-2">Select a Project</label>
+                    <select name="project" id="project" class="form-control">
+                      <option value="">----Select Project----</option>
+                      <option value="IoT Projects">IoT Projects</option>
+                      <option value="Software Projects">Software Projects</option>
+                      <option value="Embedded Projects">Embedded Projects</option>
+                      <option value="Android Projects">Android Projects</option>
+                      <option value="Python Projects">Python Projects</option>
+                      <option value="Matlab Projects">Matlab Projects</option>
+                      <option value="Mini Projects">Mini Projects</option>
+                    </select>
+                  </div>
+
+                  <script>
+                    function toggleProjectDropdown() {
+                      let serviceDropdown = document.getElementById("service");
+                      let projectDropdown = document.getElementById("project-selection");
+                      let classroomDropdown = document.getElementById("classroom-selection");
+                      let projectField = document.getElementById("project"); // Get project select field
+                      let classroomField = document.getElementById("classroom"); // Get project select field
+
+                      if (serviceDropdown.value === "IT and Non-IT Real-time Projects") {
+                        projectDropdown.style.display = "block"; // Show project selection
+                        projectField.setAttribute("required", "true"); // Make required
+                        
+                      } else {
+                        projectDropdown.style.display = "none"; // Hide project selection
+                        projectField.removeAttribute("required"); // Remove required
+                        projectField.value = ""; // Clear selected project
+                      }
+                      
+                      if (serviceDropdown.value === "Classroom Training") {
+                        classroomDropdown.style.display = "block"; // Show project selection
+                        classroomField.setAttribute("required", "true"); // Make required
+                      } else {
+                        classroomDropdown.style.display = "none"; // Hide project selection
+                        classroomField.removeAttribute("required"); // Remove required
+                        classroomField.value = ""; // Clear selected project
+                      }
+                    }
+                  </script>
                   <div class="col-md-12">
-                    <label for="message-field" class="pb-2">Message</label>
+                    <label for="message-field" class="pb-2">Required Services and Brief Overview</label>
                     <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
                   </div>
                   <div class="col-md-12 text-center">
