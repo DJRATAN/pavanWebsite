@@ -318,13 +318,13 @@
                       if (serviceDropdown.value === "IT and Non-IT Real-time Projects") {
                         projectDropdown.style.display = "block"; // Show project selection
                         projectField.setAttribute("required", "true"); // Make required
-                        
+
                       } else {
                         projectDropdown.style.display = "none"; // Hide project selection
                         projectField.removeAttribute("required"); // Remove required
                         projectField.value = ""; // Clear selected project
                       }
-                      
+
                       if (serviceDropdown.value === "Classroom Training") {
                         classroomDropdown.style.display = "block"; // Show project selection
                         classroomField.setAttribute("required", "true"); // Make required
@@ -337,8 +337,10 @@
                   </script>
                   <div class="col-md-12">
                     <label for="message-field" class="pb-2">Required Services and Brief Overview</label>
-                    <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
+                    <textarea class="form-control" name="message" rows="10" id="message-field" required=""
+                      style="resize: none; height: 300px; width: 100%;"></textarea>
                   </div>
+
                   <div class="col-md-12 text-center">
                     <div class="loading">Loading</div>
                     <div class="error-message"></div>

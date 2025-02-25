@@ -878,14 +878,9 @@
 
 
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const hash = window.location.hash.substring(1); // Get the ID from the URL (without #)
-      if (hash) {
-        showImage(hash); // Call the function to show the correct section
-      }
-    });
-
     function showImage(contentId) {
+      event.preventDefault(); // Prevent default scrolling behavior
+
       // Hide all content sections
       const allContent = document.querySelectorAll('.image-display > div');
       allContent.forEach(content => content.style.display = 'none');
@@ -895,11 +890,11 @@
       if (selectedContent) {
         selectedContent.style.display = 'block';
 
-        // Scroll smoothly to the section
-        selectedContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Remove this line to prevent scrolling:
+        // selectedContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-        // Update the URL hash without reloading the page
-        history.pushState(null, null, `#${contentId}`);
+        // Update the URL hash without affecting scrolling
+        history.replaceState(null, null, `#${contentId}`);
       }
 
       // Remove "active" class from all buttons
@@ -912,7 +907,7 @@
         activeButton.classList.add('active');
       }
 
-      // Close the dropdown if applicable
+      // Close dropdown if applicable
       const dropdown = document.querySelector('.dropdown-menu.show');
       if (dropdown) {
         dropdown.classList.remove('show');
@@ -924,13 +919,6 @@
       }
     }
 
-    // Function to check URL hash on page load
-    window.onload = function () {
-      const hash = window.location.hash.substring(1); // Remove the `#`
-      if (hash) {
-        showImage(hash);
-      }
-    };
 
   </script>
 
