@@ -58,8 +58,8 @@ function validateForm() {
     alert("Please select a service.");
     return false;
   }
-  if (message.length < 30 || message.length > 400) {
-    alert("Message must be between 30 to 400 characters.");
+  if (message.length < 30 || message.length > 500) {
+    alert("Required Services and Brief Overview must be between 30 to 500 characters.");
     return false;
   }
   return true; // Form is valid
@@ -113,7 +113,9 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         document.querySelector('.sent-message').style.display = 'none';
       }, 5000);
-
+      // Hide project and classroom selection after form submission
+      document.getElementById('project-selection').style.display = 'none';
+      document.getElementById('classroom-selection').style.display = 'none';
     } catch (error) {
       console.error('Error submitting form:', error);
 
