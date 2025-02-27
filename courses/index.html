@@ -878,6 +878,14 @@
 
 
   <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Check if there's a hash in the URL when the page loads
+      if (window.location.hash) {
+        const contentId = window.location.hash.substring(1); // Remove #
+        showImage(contentId);
+      }
+    });
+
     function showImage(contentId) {
       event.preventDefault(); // Prevent default scrolling behavior
 
@@ -889,9 +897,6 @@
       const selectedContent = document.getElementById(contentId);
       if (selectedContent) {
         selectedContent.style.display = 'block';
-
-        // Remove this line to prevent scrolling:
-        // selectedContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
         // Update the URL hash without affecting scrolling
         history.replaceState(null, null, `#${contentId}`);
@@ -913,7 +918,7 @@
         dropdown.classList.remove('show');
       }
 
-      const dropdownToggle = document.querySelector('.dropdown-toggle[aria-expanded="true"]');
+      const dropdownToggle = document.querySelector(`.dropdown-toggle[aria-expanded="true"]`);
       if (dropdownToggle) {
         dropdownToggle.setAttribute('aria-expanded', 'false');
       }
