@@ -192,10 +192,11 @@
                 <i class="bi bi-telephone flex-shrink-0"></i>
                 <div>
                   <h3>Call Us</h3>
-                  <p>+91 8897814073</p>
-                  <p>+91 8919210748</p>
-                  <p>+91 7842510602</p>
+                  <p><a href="https://wa.me/918897814073" target="_blank">+91 8897814073</a></p>
+                  <p><a href="https://wa.me/918919210748" target="_blank">+91 8919210748</a></p>
+                  <p><a href="https://wa.me/917842510602" target="_blank">+91 7842510602</a></p>
                 </div>
+
               </div><!-- End Info Item -->
 
               <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
@@ -374,6 +375,23 @@
 
 
   </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const urlParams = new URLSearchParams(window.location.search);
+      const selectedCourse = urlParams.get("course");
+
+      if (selectedCourse) {
+        const domainDropdown = document.getElementById("domain");
+        for (const option of domainDropdown.options) {
+          if (option.value === selectedCourse) {
+            option.selected = true;
+            break;
+          }
+        }
+      }
+    });
+  </script>
+
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
       class="bi bi-arrow-up-short"></i></a>
